@@ -1,0 +1,39 @@
+<div class="search">
+  <mat-form-field class="search__form">
+    <input
+      [(ngModel)]="searchStr"
+      (ngModelChange)="handleChange()"
+      [minlength]="minLength"
+      matInput
+      placeholder="Insert your search"
+      value="Example Alex"
+    >
+    <mat-error>
+      <h3>Min length of words is {{minLength}}. Now it is {{searchStr.length}}.</h3>
+    </mat-error>
+  </mat-form-field>
+</div>
+<div class="card"
+  *ngIf="isContain"
+>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{user.name}}</mat-card-title>
+      <mat-card-subtitle>{{user.location}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image
+         [src]="user.avatar_url"
+         [alt]="user.name">
+    <mat-card-content>
+      <ul>
+        <li>public repos: {{user.public_repos}}</li>
+        <li>public gists: {{user.public_gists}}</li>
+        <li>public followers: {{user.followers}}</li>
+        <li>link: <a [href]="user.html_url" target="_blank">click</a></li>
+      </ul>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary">More details</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

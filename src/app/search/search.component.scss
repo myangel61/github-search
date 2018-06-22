@@ -1,0 +1,15 @@
+.search {
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+
+  &__form {
+    max-width: 600px;
+    width: 100%;
+  }
+}
+
+.card {
+  max-width: 600px;
+  margin: 0 auto;
+}
