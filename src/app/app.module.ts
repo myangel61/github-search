@@ -11,6 +11,9 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SearchComponent } from './search/search.component';
 import { UserService } from './user.service';
 
+import { ApolloModule } from 'apollo-angular';
+import { HttpLinkModule } from 'apollo-angular-link-http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,11 +24,13 @@ import { UserService } from './user.service';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule,
     MatToolbarModule,
     MatInputModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule,
+    ApolloModule,
+    HttpLinkModule,
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
