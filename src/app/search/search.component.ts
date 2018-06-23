@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
-import {Apollo} from "apollo-angular";
-import {GET_SMTH} from "./graphql";
+import {Apollo} from 'apollo-angular';
+import {GET_SMTH} from './graphql';
 
 @Component({
   selector: 'app-search',
@@ -16,18 +16,21 @@ export class SearchComponent {
   user: any;
 
   constructor(private service: UserService, apollo: Apollo) {
-    apollo.query({query: GET_SMTH}).subscribe((res) => {
-      console.log(res);
+    apollo.query({query: GET_SMTH}).subscribe((user) => {
+      console.log(user);
     });
   }
 
-  handleChange() {
-    if (this.minLength <= this.searchStr.length) {
-      this.service.getUser(this.searchStr)
-        .subscribe(user => {
-          this.user = user;
-          this.isContain = true;
-        });
-    }
-  }
+  // handleChange() {
+  //   if (this.minLength <= this.searchStr.length) {
+  //     this.service.getUser(this.searchStr)
+  //       .subscribe(user => {
+  //         this.user = user;
+  //         this.isContain = true;
+  //       });
+  //   }
+  // }
 }
+
+// this.user = user;
+// this.isContain = true;
